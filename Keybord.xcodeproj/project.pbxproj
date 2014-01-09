@@ -1,0 +1,459 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BFC9C3A8187E8A6000982A87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3A7187E8A6000982A87 /* Foundation.framework */; };
+		BFC9C3AA187E8A6000982A87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3A9187E8A6000982A87 /* CoreGraphics.framework */; };
+		BFC9C3AC187E8A6000982A87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3AB187E8A6000982A87 /* UIKit.framework */; };
+		BFC9C3B2187E8A6000982A87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3B0187E8A6000982A87 /* InfoPlist.strings */; };
+		BFC9C3B4187E8A6000982A87 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3B3187E8A6000982A87 /* main.m */; };
+		BFC9C3B8187E8A6000982A87 /* LJJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3B7187E8A6000982A87 /* LJJAppDelegate.m */; };
+		BFC9C3BA187E8A6000982A87 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3B9187E8A6000982A87 /* Images.xcassets */; };
+		BFC9C3C1187E8A6000982A87 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3C0187E8A6000982A87 /* XCTest.framework */; };
+		BFC9C3C2187E8A6000982A87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3A7187E8A6000982A87 /* Foundation.framework */; };
+		BFC9C3C3187E8A6000982A87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3AB187E8A6000982A87 /* UIKit.framework */; };
+		BFC9C3CB187E8A6000982A87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3C9187E8A6000982A87 /* InfoPlist.strings */; };
+		BFC9C3CD187E8A6000982A87 /* KeybordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3CC187E8A6000982A87 /* KeybordTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BFC9C3C4187E8A6000982A87 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFC9C39C187E8A6000982A87 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BFC9C3A3187E8A6000982A87;
+			remoteInfo = Keybord;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BFC9C3A4187E8A6000982A87 /* Keybord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keybord.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC9C3A7187E8A6000982A87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		BFC9C3A9187E8A6000982A87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		BFC9C3AB187E8A6000982A87 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		BFC9C3AF187E8A6000982A87 /* Keybord-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Keybord-Info.plist"; sourceTree = "<group>"; };
+		BFC9C3B1187E8A6000982A87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BFC9C3B3187E8A6000982A87 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		BFC9C3B5187E8A6000982A87 /* Keybord-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Keybord-Prefix.pch"; sourceTree = "<group>"; };
+		BFC9C3B6187E8A6000982A87 /* LJJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJJAppDelegate.h; sourceTree = "<group>"; };
+		BFC9C3B7187E8A6000982A87 /* LJJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LJJAppDelegate.m; sourceTree = "<group>"; };
+		BFC9C3B9187E8A6000982A87 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		BFC9C3BF187E8A6000982A87 /* KeybordTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KeybordTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BFC9C3C0187E8A6000982A87 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		BFC9C3C8187E8A6000982A87 /* KeybordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeybordTests-Info.plist"; sourceTree = "<group>"; };
+		BFC9C3CA187E8A6000982A87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		BFC9C3CC187E8A6000982A87 /* KeybordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeybordTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BFC9C3A1187E8A6000982A87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC9C3AA187E8A6000982A87 /* CoreGraphics.framework in Frameworks */,
+				BFC9C3AC187E8A6000982A87 /* UIKit.framework in Frameworks */,
+				BFC9C3A8187E8A6000982A87 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC9C3BC187E8A6000982A87 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC9C3C1187E8A6000982A87 /* XCTest.framework in Frameworks */,
+				BFC9C3C3187E8A6000982A87 /* UIKit.framework in Frameworks */,
+				BFC9C3C2187E8A6000982A87 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BFC9C39B187E8A6000982A87 = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3AD187E8A6000982A87 /* Keybord */,
+				BFC9C3C6187E8A6000982A87 /* KeybordTests */,
+				BFC9C3A6187E8A6000982A87 /* Frameworks */,
+				BFC9C3A5187E8A6000982A87 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFC9C3A5187E8A6000982A87 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3A4187E8A6000982A87 /* Keybord.app */,
+				BFC9C3BF187E8A6000982A87 /* KeybordTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BFC9C3A6187E8A6000982A87 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3A7187E8A6000982A87 /* Foundation.framework */,
+				BFC9C3A9187E8A6000982A87 /* CoreGraphics.framework */,
+				BFC9C3AB187E8A6000982A87 /* UIKit.framework */,
+				BFC9C3C0187E8A6000982A87 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BFC9C3AD187E8A6000982A87 /* Keybord */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3B6187E8A6000982A87 /* LJJAppDelegate.h */,
+				BFC9C3B7187E8A6000982A87 /* LJJAppDelegate.m */,
+				BFC9C3B9187E8A6000982A87 /* Images.xcassets */,
+				BFC9C3AE187E8A6000982A87 /* Supporting Files */,
+			);
+			path = Keybord;
+			sourceTree = "<group>";
+		};
+		BFC9C3AE187E8A6000982A87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3AF187E8A6000982A87 /* Keybord-Info.plist */,
+				BFC9C3B0187E8A6000982A87 /* InfoPlist.strings */,
+				BFC9C3B3187E8A6000982A87 /* main.m */,
+				BFC9C3B5187E8A6000982A87 /* Keybord-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFC9C3C6187E8A6000982A87 /* KeybordTests */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3CC187E8A6000982A87 /* KeybordTests.m */,
+				BFC9C3C7187E8A6000982A87 /* Supporting Files */,
+			);
+			path = KeybordTests;
+			sourceTree = "<group>";
+		};
+		BFC9C3C7187E8A6000982A87 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3C8187E8A6000982A87 /* KeybordTests-Info.plist */,
+				BFC9C3C9187E8A6000982A87 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BFC9C3A3187E8A6000982A87 /* Keybord */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC9C3D0187E8A6000982A87 /* Build configuration list for PBXNativeTarget "Keybord" */;
+			buildPhases = (
+				BFC9C3A0187E8A6000982A87 /* Sources */,
+				BFC9C3A1187E8A6000982A87 /* Frameworks */,
+				BFC9C3A2187E8A6000982A87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Keybord;
+			productName = Keybord;
+			productReference = BFC9C3A4187E8A6000982A87 /* Keybord.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BFC9C3BE187E8A6000982A87 /* KeybordTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BFC9C3D3187E8A6000982A87 /* Build configuration list for PBXNativeTarget "KeybordTests" */;
+			buildPhases = (
+				BFC9C3BB187E8A6000982A87 /* Sources */,
+				BFC9C3BC187E8A6000982A87 /* Frameworks */,
+				BFC9C3BD187E8A6000982A87 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BFC9C3C5187E8A6000982A87 /* PBXTargetDependency */,
+			);
+			name = KeybordTests;
+			productName = KeybordTests;
+			productReference = BFC9C3BF187E8A6000982A87 /* KeybordTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFC9C39C187E8A6000982A87 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = LJJ;
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Jun;
+				TargetAttributes = {
+					BFC9C3BE187E8A6000982A87 = {
+						TestTargetID = BFC9C3A3187E8A6000982A87;
+					};
+				};
+			};
+			buildConfigurationList = BFC9C39F187E8A6000982A87 /* Build configuration list for PBXProject "Keybord" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = BFC9C39B187E8A6000982A87;
+			productRefGroup = BFC9C3A5187E8A6000982A87 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BFC9C3A3187E8A6000982A87 /* Keybord */,
+				BFC9C3BE187E8A6000982A87 /* KeybordTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BFC9C3A2187E8A6000982A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC9C3B2187E8A6000982A87 /* InfoPlist.strings in Resources */,
+				BFC9C3BA187E8A6000982A87 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC9C3BD187E8A6000982A87 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC9C3CB187E8A6000982A87 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BFC9C3A0187E8A6000982A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC9C3B4187E8A6000982A87 /* main.m in Sources */,
+				BFC9C3B8187E8A6000982A87 /* LJJAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BFC9C3BB187E8A6000982A87 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BFC9C3CD187E8A6000982A87 /* KeybordTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BFC9C3C5187E8A6000982A87 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BFC9C3A3187E8A6000982A87 /* Keybord */;
+			targetProxy = BFC9C3C4187E8A6000982A87 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BFC9C3B0187E8A6000982A87 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC9C3B1187E8A6000982A87 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		BFC9C3C9187E8A6000982A87 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BFC9C3CA187E8A6000982A87 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BFC9C3CE187E8A6000982A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BFC9C3CF187E8A6000982A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFC9C3D1187E8A6000982A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Keybord/Keybord-Prefix.pch";
+				INFOPLIST_FILE = "Keybord/Keybord-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		BFC9C3D2187E8A6000982A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Keybord/Keybord-Prefix.pch";
+				INFOPLIST_FILE = "Keybord/Keybord-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		BFC9C3D4187E8A6000982A87 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Keybord.app/Keybord";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Keybord/Keybord-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "KeybordTests/KeybordTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		BFC9C3D5187E8A6000982A87 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Keybord.app/Keybord";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Keybord/Keybord-Prefix.pch";
+				INFOPLIST_FILE = "KeybordTests/KeybordTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BFC9C39F187E8A6000982A87 /* Build configuration list for PBXProject "Keybord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC9C3CE187E8A6000982A87 /* Debug */,
+				BFC9C3CF187E8A6000982A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BFC9C3D0187E8A6000982A87 /* Build configuration list for PBXNativeTarget "Keybord" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC9C3D1187E8A6000982A87 /* Debug */,
+				BFC9C3D2187E8A6000982A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		BFC9C3D3187E8A6000982A87 /* Build configuration list for PBXNativeTarget "KeybordTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BFC9C3D4187E8A6000982A87 /* Debug */,
+				BFC9C3D5187E8A6000982A87 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFC9C39C187E8A6000982A87 /* Project object */;
+}
