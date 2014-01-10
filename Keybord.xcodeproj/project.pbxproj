@@ -19,6 +19,14 @@
 		BFC9C3C3187E8A6000982A87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3AB187E8A6000982A87 /* UIKit.framework */; };
 		BFC9C3CB187E8A6000982A87 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3C9187E8A6000982A87 /* InfoPlist.strings */; };
 		BFC9C3CD187E8A6000982A87 /* KeybordTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3CC187E8A6000982A87 /* KeybordTests.m */; };
+		BFC9C3D9187E8AAF00982A87 /* LJJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3D8187E8AAF00982A87 /* LJJViewController.m */; };
+		BFC9C3DB187E8AFF00982A87 /* emotions.plist in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3DA187E8AFF00982A87 /* emotions.plist */; };
+		BFC9C3DE187E8B6F00982A87 /* LJJBrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3DD187E8B6F00982A87 /* LJJBrowView.m */; };
+		BFC9C3E1187E8C3500982A87 /* LJJEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3E0187E8C3500982A87 /* LJJEmotion.m */; };
+		BFC9C3E4187E8FB400982A87 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3E3187E8FB400982A87 /* NSString+Html.m */; };
+		BFC9C3F2187E92CB00982A87 /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3F0187E92CB00982A87 /* DeleteEmoticonBtn@2x.png */; };
+		BFC9C3F3187E92CB00982A87 /* DeleteEmoticonBtnHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC9C3F1187E92CB00982A87 /* DeleteEmoticonBtnHL@2x.png */; };
+		BFC9C3F6187E942600982A87 /* LJJBrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC9C3F5187E942600982A87 /* LJJBrowItem.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +56,19 @@
 		BFC9C3C8187E8A6000982A87 /* KeybordTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "KeybordTests-Info.plist"; sourceTree = "<group>"; };
 		BFC9C3CA187E8A6000982A87 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BFC9C3CC187E8A6000982A87 /* KeybordTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeybordTests.m; sourceTree = "<group>"; };
+		BFC9C3D7187E8AAF00982A87 /* LJJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJViewController.h; sourceTree = "<group>"; };
+		BFC9C3D8187E8AAF00982A87 /* LJJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJViewController.m; sourceTree = "<group>"; };
+		BFC9C3DA187E8AFF00982A87 /* emotions.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = emotions.plist; sourceTree = "<group>"; };
+		BFC9C3DC187E8B6F00982A87 /* LJJBrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJBrowView.h; sourceTree = "<group>"; };
+		BFC9C3DD187E8B6F00982A87 /* LJJBrowView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJBrowView.m; sourceTree = "<group>"; };
+		BFC9C3DF187E8C3500982A87 /* LJJEmotion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJEmotion.h; sourceTree = "<group>"; };
+		BFC9C3E0187E8C3500982A87 /* LJJEmotion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJEmotion.m; sourceTree = "<group>"; };
+		BFC9C3E2187E8FB400982A87 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
+		BFC9C3E3187E8FB400982A87 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
+		BFC9C3F0187E92CB00982A87 /* DeleteEmoticonBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DeleteEmoticonBtn@2x.png"; sourceTree = "<group>"; };
+		BFC9C3F1187E92CB00982A87 /* DeleteEmoticonBtnHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DeleteEmoticonBtnHL@2x.png"; sourceTree = "<group>"; };
+		BFC9C3F4187E942600982A87 /* LJJBrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJBrowItem.h; sourceTree = "<group>"; };
+		BFC9C3F5187E942600982A87 /* LJJBrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJBrowItem.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,8 +128,11 @@
 		BFC9C3AD187E8A6000982A87 /* Keybord */ = {
 			isa = PBXGroup;
 			children = (
+				BFC9C3D6187E8A9C00982A87 /* Keybord */,
 				BFC9C3B6187E8A6000982A87 /* LJJAppDelegate.h */,
 				BFC9C3B7187E8A6000982A87 /* LJJAppDelegate.m */,
+				BFC9C3D7187E8AAF00982A87 /* LJJViewController.h */,
+				BFC9C3D8187E8AAF00982A87 /* LJJViewController.m */,
 				BFC9C3B9187E8A6000982A87 /* Images.xcassets */,
 				BFC9C3AE187E8A6000982A87 /* Supporting Files */,
 			);
@@ -118,6 +142,7 @@
 		BFC9C3AE187E8A6000982A87 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BFC9C3DA187E8AFF00982A87 /* emotions.plist */,
 				BFC9C3AF187E8A6000982A87 /* Keybord-Info.plist */,
 				BFC9C3B0187E8A6000982A87 /* InfoPlist.strings */,
 				BFC9C3B3187E8A6000982A87 /* main.m */,
@@ -142,6 +167,31 @@
 				BFC9C3C9187E8A6000982A87 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BFC9C3D6187E8A9C00982A87 /* Keybord */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3E5187E928C00982A87 /* Image */,
+				BFC9C3E2187E8FB400982A87 /* NSString+Html.h */,
+				BFC9C3E3187E8FB400982A87 /* NSString+Html.m */,
+				BFC9C3DF187E8C3500982A87 /* LJJEmotion.h */,
+				BFC9C3E0187E8C3500982A87 /* LJJEmotion.m */,
+				BFC9C3DC187E8B6F00982A87 /* LJJBrowView.h */,
+				BFC9C3DD187E8B6F00982A87 /* LJJBrowView.m */,
+				BFC9C3F4187E942600982A87 /* LJJBrowItem.h */,
+				BFC9C3F5187E942600982A87 /* LJJBrowItem.m */,
+			);
+			path = Keybord;
+			sourceTree = "<group>";
+		};
+		BFC9C3E5187E928C00982A87 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				BFC9C3F0187E92CB00982A87 /* DeleteEmoticonBtn@2x.png */,
+				BFC9C3F1187E92CB00982A87 /* DeleteEmoticonBtnHL@2x.png */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +271,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC9C3B2187E8A6000982A87 /* InfoPlist.strings in Resources */,
+				BFC9C3F3187E92CB00982A87 /* DeleteEmoticonBtnHL@2x.png in Resources */,
 				BFC9C3BA187E8A6000982A87 /* Images.xcassets in Resources */,
+				BFC9C3F2187E92CB00982A87 /* DeleteEmoticonBtn@2x.png in Resources */,
+				BFC9C3DB187E8AFF00982A87 /* emotions.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -241,7 +294,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFC9C3B4187E8A6000982A87 /* main.m in Sources */,
+				BFC9C3DE187E8B6F00982A87 /* LJJBrowView.m in Sources */,
 				BFC9C3B8187E8A6000982A87 /* LJJAppDelegate.m in Sources */,
+				BFC9C3E1187E8C3500982A87 /* LJJEmotion.m in Sources */,
+				BFC9C3E4187E8FB400982A87 /* NSString+Html.m in Sources */,
+				BFC9C3D9187E8AAF00982A87 /* LJJViewController.m in Sources */,
+				BFC9C3F6187E942600982A87 /* LJJBrowItem.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
