@@ -107,28 +107,89 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
 //    if (_textField == nil || _textView == nil) return;
 //    NSLog(@"%d",btn.tag);
     if (btn.tag != LJJBrowCount && btn.tag > _emotions.count) return;
-    if (_textView) {
-        NSMutableString * str = [NSMutableString stringWithString:[_textView text]];
-        if (btn.tag != LJJBrowCount) {
-            LJJEmotion * emotion = self.emotions[btn.tag];
-            [str appendFormat:@"%@",emotion.phrase];
-        } else {
-            if (str.length) {
-                [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
-            }
-        }
-        [_textView setText:str];
+    NSMutableString * str = nil;
+    
+    if (_textField) {
+        str = [NSMutableString stringWithString:_textField.text];
     } else {
-        NSMutableString * str = [NSMutableString stringWithString:[_textField text]];
-        if (btn.tag != 27) {
-            LJJEmotion * emotion = self.emotions[btn.tag];
-            [str appendFormat:@"%@",emotion.phrase];
-        } else {
-            if (str.length) {
-                [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
+        str = [NSMutableString stringWithString:_textView.text];
+    }
+    
+    if (btn.tag != 27) {
+        LJJEmotion * emotion = self.emotions[btn.tag];
+        [str appendFormat:@"%@",emotion.phrase];
+    } else {
+        if (str.length) {
+            NSRange range = NSMakeRange(str.length, 0);
+            if (range.length == 0 && range.location != 0) {
+                NSString * sub = [str substringWithRange:NSMakeRange(range.location - 1, 1)];
+                if ([sub isEqualToString:@"]"]) {
+                    NSRange lastRange = [str rangeOfString:@"[" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
+                    
+                    range = NSMakeRange(lastRange.location, range.location - lastRange.location);
+                    [str deleteCharactersInRange:range];
+                }else {
+                    [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
+                }
             }
         }
-        [_textField setText:str];
     }
+    
+    if (_textField) {
+        [_textField setText:str];
+    } else {
+        [_textView setText:str];
+    }
+    
 }
+
+/*
+ if (_textView) {
+ NSMutableString * str = [NSMutableString stringWithString:[_textView text]];
+ if (btn.tag != LJJBrowCount) {
+ LJJEmotion * emotion = self.emotions[btn.tag];
+ [str appendFormat:@"%@",emotion.phrase];
+ } else {
+ if (str.length) {
+ 
+ NSRange range = NSMakeRange(str.length, 0);
+ if (range.length == 0 && range.location != 0) {
+ NSString * sub = [str substringWithRange:NSMakeRange(range.location - 1, 1)];
+ if ([sub isEqualToString:@"]"]) {
+ NSRange lastRange = [str rangeOfString:@"[" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
+ 
+ range = NSMakeRange(lastRange.location, range.location - lastRange.location);
+ [str deleteCharactersInRange:range];
+ }else {
+ [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
+ }
+ }
+ 
+ }
+ }
+ [_textView setText:str];
+ } else {
+ NSMutableString * str = [NSMutableString stringWithString:[_textField text]];
+ if (btn.tag != 27) {
+ LJJEmotion * emotion = self.emotions[btn.tag];
+ [str appendFormat:@"%@",emotion.phrase];
+ } else {
+ if (str.length) {
+ NSRange range = NSMakeRange(str.length, 0);
+ if (range.length == 0 && range.location != 0) {
+ NSString * sub = [str substringWithRange:NSMakeRange(range.location - 1, 1)];
+ if ([sub isEqualToString:@"]"]) {
+ NSRange lastRange = [str rangeOfString:@"[" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
+ 
+ range = NSMakeRange(lastRange.location, range.location - lastRange.location);
+ [str deleteCharactersInRange:range];
+ }else {
+ [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
+ }
+ }
+ }
+ }
+ [_textField setText:str];
+ }
+ */
 @end

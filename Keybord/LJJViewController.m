@@ -12,10 +12,12 @@
 
 #import "LJJEmotion.h"
 
+#import "LJJTextView.h"
 
-@interface LJJViewController ()
+
+@interface LJJViewController () <UITextViewDelegate>
 {
-    UITextView * _textView;
+    LJJTextView * _textView;
     UITextField * _textField;
     UIToolbar * _bar;
 }
@@ -28,8 +30,9 @@
     [super viewDidLoad];
     
     
-    UITextView * textView = [[UITextView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+    LJJTextView * textView = [[LJJTextView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
 //    [textView setEditable:NO];
+    [textView setDelegate:self];
     [self.view addSubview:textView];
     _textView = textView;
     
@@ -52,12 +55,10 @@
     [brow setEmotions:array];
 //    [self.view addSubview:brow];
     [textField setInputView:brow];
-//    [brow show];
-
-//    NSLog(@"%@",array);
     
     
 }
+
 
 - (void)huan {
     if (_textField.isFirstResponder) {
