@@ -30,3 +30,6 @@
 
 //表情键盘
 #import "LJJBrowView.h"
+
+//表情模型
+#import "LJJEmotion.h"

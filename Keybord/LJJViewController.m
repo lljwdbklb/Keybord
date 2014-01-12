@@ -7,19 +7,14 @@
 //
 
 #import "LJJViewController.h"
-#import "LJJBrowView.h"
-
-
-#import "LJJEmotion.h"
-
-#import "LJJTextView.h"
-
+#import "LJJKeybord.h"
 
 @interface LJJViewController () <UITextViewDelegate>
 {
-    LJJTextView * _textView;
-    UITextField * _textField;
-    UIToolbar * _bar;
+    LJJTextView * _textView;//输入方
+    UIToolbar * _bar;//键盘工具
+    
+    UITextField * _textField;//用于间接切换键盘的调用方
 }
 @end
 
@@ -33,11 +28,11 @@
     
     [self setupBrowView];//添加表情键盘
     
-    [self setupToolBar];//添加工具
+    [self setupToolBar];//添加键盘工具
 }
 #pragma mark 添加textView
 - (void)setupTextView {
-    LJJTextView * textView = [[LJJTextView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
+    LJJTextView * textView = [[LJJTextView alloc]initWithFrame:CGRectMake(0, 20, 320, 100)];
     //    [textView setEditable:NO];
     [textView setBackgroundColor:[UIColor lightGrayColor]];
     [textView setDelegate:self];
@@ -61,7 +56,7 @@
     //    [self.view addSubview:brow];
     [_textField setInputView:brow];
 }
-
+#pragma mark 添加键盘工具
 - (void)setupToolBar {
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithTitle:@"换" style:UIBarButtonItemStyleDone target:self action:@selector(huan)];
     UIToolbar * bar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
