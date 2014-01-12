@@ -5,6 +5,8 @@
 //  Created by Jun on 14-1-9.
 //  Copyright (c) 2014年 Jun. All rights reserved.
 //
+//  表情模型
+//
 
 #import <Foundation/Foundation.h>
 /**
@@ -23,7 +25,20 @@
 @property (copy, nonatomic) NSString * icon;
 @property (copy, nonatomic) NSString * phrase;
 
+/**
+ *  构造方法
+ *
+ *  @param dict 数据字典
+ *
+ *  @return 当前对象
+ */
 - (id)initWithDict:(NSDictionary *)dict;
-
+/**
+ *  解析数据文件
+ *
+ *  @param file 文件名
+ *
+ *  @return 返回解析后的表情对象
+ */
 + (NSArray *)emotionsWithFile:(NSString *)file;
 @end

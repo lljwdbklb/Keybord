@@ -87,9 +87,6 @@ const CGFloat LJJAnimatedTimer = 0.25;
     [self setupItems];
 }
 - (void)setFrame:(CGRect)frame {
-//    if (frame.origin.y == 0) {
-//        frame.origin.y = [UIScreen mainScreen].applicationFrame.size.height + kBrowViewH;
-//    }
     frame.size.width = [UIScreen mainScreen].applicationFrame.size.width;
     frame.size.height = kBrowViewH;
     frame.origin.x = 0;
@@ -103,32 +100,32 @@ const CGFloat LJJAnimatedTimer = 0.25;
 }
 
 #pragma mark - 动作
-- (void)show {
-    _isShow = YES;
-    CGRect frame = self.frame;
-    frame.origin.y = self.superview.bounds.size.height - kBrowViewH;
-    [UIView animateWithDuration:LJJAnimatedTimer animations:^{
-        self.frame = frame;
-    }completion:^(BOOL finished) {
-        if ([_delegate respondsToSelector:@selector(browChangeAtFrame:animatedTimer:)]) {
-            [_delegate browChangeAtFrame:frame animatedTimer:LJJAnimatedTimer];
-        }
-    }];
-    
-}
+//- (void)show {
+//    _isShow = YES;
+//    CGRect frame = self.frame;
+//    frame.origin.y = self.superview.bounds.size.height - kBrowViewH;
+//    [UIView animateWithDuration:LJJAnimatedTimer animations:^{
+//        self.frame = frame;
+//    }completion:^(BOOL finished) {
+//        if ([_delegate respondsToSelector:@selector(browChangeAtFrame:animatedTimer:)]) {
+//            [_delegate browChangeAtFrame:frame animatedTimer:LJJAnimatedTimer];
+//        }
+//    }];
+//    
+//}
 
-- (void)hide {
-    _isShow = NO;
-    CGRect frame = self.frame;
-    frame.origin.y = self.superview.bounds.size.height;
-    
-    [UIView animateWithDuration:LJJAnimatedTimer animations:^{
-        self.frame = frame;
-    }];
-    if ([_delegate respondsToSelector:@selector(browChangeAtFrame:animatedTimer:)]) {
-        [_delegate browChangeAtFrame:frame animatedTimer:LJJAnimatedTimer];
-    }
-}
+//- (void)hide {
+//    _isShow = NO;
+//    CGRect frame = self.frame;
+//    frame.origin.y = self.superview.bounds.size.height;
+//    
+//    [UIView animateWithDuration:LJJAnimatedTimer animations:^{
+//        self.frame = frame;
+//    }];
+//    if ([_delegate respondsToSelector:@selector(browChangeAtFrame:animatedTimer:)]) {
+//        [_delegate browChangeAtFrame:frame animatedTimer:LJJAnimatedTimer];
+//    }
+//}
 #pragma mark - scrollView代理
 - (void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView {
     NSInteger page = scrollView.contentOffset.x / self.frame.size.width;

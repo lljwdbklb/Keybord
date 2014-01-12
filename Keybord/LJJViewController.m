@@ -29,13 +29,25 @@
 {
     [super viewDidLoad];
     
+    [self setupTextView]; //添加textView
     
+    [self setupBrowView];//添加表情键盘
+    
+    [self setupToolBar];//添加工具
+}
+#pragma mark 添加textView
+- (void)setupTextView {
     LJJTextView * textView = [[LJJTextView alloc]initWithFrame:CGRectMake(0, 0, 320, 100)];
-//    [textView setEditable:NO];
+    //    [textView setEditable:NO];
+    [textView setBackgroundColor:[UIColor lightGrayColor]];
     [textView setDelegate:self];
     [self.view addSubview:textView];
     _textView = textView;
     
+}
+
+#pragma mark 添加表情键盘
+- (void)setupBrowView {
     UITextField * textField = [[UITextField alloc]init];
     [self.view addSubview:textField];
     _textField = textField;
@@ -43,23 +55,22 @@
     
     NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle] pathForResource:@"emotions.plist" ofType:nil]];
     
-    
+    LJJBrowView * brow = [[LJJBrowView alloc]init];
+    [brow setTextView:_textView];
+    [brow setEmotions:array];
+    //    [self.view addSubview:brow];
+    [_textField setInputView:brow];
+}
+
+- (void)setupToolBar {
     UIBarButtonItem * item = [[UIBarButtonItem alloc]initWithTitle:@"换" style:UIBarButtonItemStyleDone target:self action:@selector(huan)];
     UIToolbar * bar = [[UIToolbar alloc]initWithFrame:CGRectMake(0, 0, 320, 44)];
     [bar setItems:@[item]];
-    [textView setInputAccessoryView:bar];
-    [textField setInputAccessoryView:bar];
-    
-    LJJBrowView * brow = [[LJJBrowView alloc]init];
-    [brow setTextView:textView];
-    [brow setEmotions:array];
-//    [self.view addSubview:brow];
-    [textField setInputView:brow];
-    
-    
+    [_textView setInputAccessoryView:bar];
+    [_textField setInputAccessoryView:bar];
 }
 
-
+#pragma mark 点击事件
 - (void)huan {
     if (_textField.isFirstResponder) {
         [_textView becomeFirstResponder];

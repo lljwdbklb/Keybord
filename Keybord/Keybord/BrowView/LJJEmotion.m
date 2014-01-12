@@ -17,6 +17,7 @@
     return self;
 }
 
+#pragma mark 归档设置
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
         self.icon = [aDecoder decodeObjectForKey:@"icon"];
@@ -37,7 +38,7 @@
     return emotion;
 }
 
-
+#pragma mark 表情读取
 + (NSArray *)emotionsWithFile:(NSString *)file {
     NSMutableArray * arrayM = [NSMutableArray array];
     
