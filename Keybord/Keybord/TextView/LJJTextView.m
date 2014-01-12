@@ -27,7 +27,7 @@
     // Drawing code
 }
 */
-
+#pragma mark 重写删除操作
 - (void)deleteBackward {
     NSRange range = self.selectedRange;
     if (range.length == 0 && range.location != 0) {

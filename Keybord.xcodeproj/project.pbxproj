@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BF61730E1882A3FC00D21D6D /* LJJTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = BF61730D1882A3FC00D21D6D /* LJJTextField.m */; };
 		BFAE2C3C188294E2000AE4A7 /* LJJBrowItem.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE2C2E188294E2000AE4A7 /* LJJBrowItem.m */; };
 		BFAE2C3D188294E2000AE4A7 /* LJJBrowView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE2C30188294E2000AE4A7 /* LJJBrowView.m */; };
 		BFAE2C3E188294E2000AE4A7 /* LJJEmotion.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE2C32188294E2000AE4A7 /* LJJEmotion.m */; };
@@ -41,6 +42,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BF61730B1882A33500D21D6D /* LJJKeybord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJJKeybord.h; sourceTree = "<group>"; };
+		BF61730C1882A3FC00D21D6D /* LJJTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJTextField.h; sourceTree = "<group>"; };
+		BF61730D1882A3FC00D21D6D /* LJJTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJTextField.m; sourceTree = "<group>"; };
 		BFAE2C2D188294E2000AE4A7 /* LJJBrowItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJBrowItem.h; sourceTree = "<group>"; };
 		BFAE2C2E188294E2000AE4A7 /* LJJBrowItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJBrowItem.m; sourceTree = "<group>"; };
 		BFAE2C2F188294E2000AE4A7 /* LJJBrowView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJBrowView.h; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 				BFAE2C33188294E2000AE4A7 /* Images */,
 				BFAE2C36188294E2000AE4A7 /* TextView */,
 				BFAE2C39188294E2000AE4A7 /* Tool */,
+				BF61730B1882A33500D21D6D /* LJJKeybord.h */,
 			);
 			path = Keybord;
 			sourceTree = "<group>";
@@ -136,6 +141,8 @@
 			children = (
 				BFAE2C37188294E2000AE4A7 /* LJJTextView.h */,
 				BFAE2C38188294E2000AE4A7 /* LJJTextView.m */,
+				BF61730C1882A3FC00D21D6D /* LJJTextField.h */,
+				BF61730D1882A3FC00D21D6D /* LJJTextField.m */,
 			);
 			path = TextView;
 			sourceTree = "<group>";
@@ -330,6 +337,7 @@
 				BFC9C3D9187E8AAF00982A87 /* LJJViewController.m in Sources */,
 				BFAE2C3E188294E2000AE4A7 /* LJJEmotion.m in Sources */,
 				BFAE2C3D188294E2000AE4A7 /* LJJBrowView.m in Sources */,
+				BF61730E1882A3FC00D21D6D /* LJJTextField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
