@@ -17,7 +17,6 @@
     return self;
 }
 
-#pragma mark 归档设置
 - (id)initWithCoder:(NSCoder *)aDecoder {
     if (self = [super init]) {
         self.icon = [aDecoder decodeObjectForKey:@"icon"];
@@ -38,12 +37,27 @@
     return emotion;
 }
 
-#pragma mark 表情读取
+
 + (NSArray *)emotionsWithFile:(NSString *)file {
+//    NSMutableArray * arrayM = [NSMutableArray array];
+//    
+//    NSArray * array = [NSArray arrayWithContentsOfFile:file];
+//    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+//        LJJEmotion * emotion = [[LJJEmotion alloc]initWithDict:obj];
+//        [arrayM addObject:emotion];
+//    }];
+    
+    return [self emotionsWithFile:file clipCount:0];
+}
+
++ (NSArray *)emotionsWithFile:(NSString *)file clipCount:(NSInteger)count {
     NSMutableArray * arrayM = [NSMutableArray array];
     
     NSArray * array = [NSArray arrayWithContentsOfFile:file];
     [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
+        if (count != 0 && idx == count) {
+            *stop = YES;
+        }
         LJJEmotion * emotion = [[LJJEmotion alloc]initWithDict:obj];
         [arrayM addObject:emotion];
     }];

@@ -5,8 +5,6 @@
 //  Created by Jun on 14-1-9.
 //  Copyright (c) 2014年 Jun. All rights reserved.
 //
-//  表情模型
-//
 
 #import <Foundation/Foundation.h>
 /**
@@ -41,4 +39,13 @@
  *  @return 返回解析后的表情对象
  */
 + (NSArray *)emotionsWithFile:(NSString *)file;
+/**
+ *  解析数据文件
+ *
+ *  @param file 文件名
+ *  @param clipCount 剪裁多少数据     0:返回全部数据
+ *
+ *  @return 返回解析后的表情对象
+ */
++ (NSArray *)emotionsWithFile:(NSString *)file clipCount:(NSInteger)count;
 @end
