@@ -14,7 +14,7 @@
 		BFAE2C3F188294E2000AE4A7 /* DeleteEmoticonBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAE2C34188294E2000AE4A7 /* DeleteEmoticonBtn@2x.png */; };
 		BFAE2C40188294E2000AE4A7 /* DeleteEmoticonBtnHL@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BFAE2C35188294E2000AE4A7 /* DeleteEmoticonBtnHL@2x.png */; };
 		BFAE2C41188294E2000AE4A7 /* LJJTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE2C38188294E2000AE4A7 /* LJJTextView.m */; };
-		BFAE2C42188294E2000AE4A7 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = BFAE2C3B188294E2000AE4A7 /* NSString+Html.m */; };
+		BFBE4E2E1885394A00BF20A8 /* NSString+Html.m in Sources */ = {isa = PBXBuildFile; fileRef = BFBE4E2D1885394A00BF20A8 /* NSString+Html.m */; };
 		BFC9C3A8187E8A6000982A87 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3A7187E8A6000982A87 /* Foundation.framework */; };
 		BFC9C3AA187E8A6000982A87 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3A9187E8A6000982A87 /* CoreGraphics.framework */; };
 		BFC9C3AC187E8A6000982A87 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC9C3AB187E8A6000982A87 /* UIKit.framework */; };
@@ -55,8 +55,8 @@
 		BFAE2C35188294E2000AE4A7 /* DeleteEmoticonBtnHL@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "DeleteEmoticonBtnHL@2x.png"; sourceTree = "<group>"; };
 		BFAE2C37188294E2000AE4A7 /* LJJTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LJJTextView.h; sourceTree = "<group>"; };
 		BFAE2C38188294E2000AE4A7 /* LJJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJTextView.m; sourceTree = "<group>"; };
-		BFAE2C3A188294E2000AE4A7 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
-		BFAE2C3B188294E2000AE4A7 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
+		BFBE4E2C1885394A00BF20A8 /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
+		BFBE4E2D1885394A00BF20A8 /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
 		BFC9C3A4187E8A6000982A87 /* Keybord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keybord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC9C3A7187E8A6000982A87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFC9C3A9187E8A6000982A87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -105,10 +105,10 @@
 		BFAE2C2B188294E2000AE4A7 /* Keybord */ = {
 			isa = PBXGroup;
 			children = (
+				BFBE4E2B1885394900BF20A8 /* Tool */,
 				BFAE2C2C188294E2000AE4A7 /* BrowView */,
 				BFAE2C33188294E2000AE4A7 /* Images */,
 				BFAE2C36188294E2000AE4A7 /* TextView */,
-				BFAE2C39188294E2000AE4A7 /* Tool */,
 				BF61730B1882A33500D21D6D /* LJJKeybord.h */,
 			);
 			path = Keybord;
@@ -147,11 +147,11 @@
 			path = TextView;
 			sourceTree = "<group>";
 		};
-		BFAE2C39188294E2000AE4A7 /* Tool */ = {
+		BFBE4E2B1885394900BF20A8 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
-				BFAE2C3A188294E2000AE4A7 /* NSString+Html.h */,
-				BFAE2C3B188294E2000AE4A7 /* NSString+Html.m */,
+				BFBE4E2C1885394A00BF20A8 /* NSString+Html.h */,
+				BFBE4E2D1885394A00BF20A8 /* NSString+Html.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -331,9 +331,9 @@
 			files = (
 				BFC9C3B4187E8A6000982A87 /* main.m in Sources */,
 				BFAE2C41188294E2000AE4A7 /* LJJTextView.m in Sources */,
-				BFAE2C42188294E2000AE4A7 /* NSString+Html.m in Sources */,
 				BFAE2C3C188294E2000AE4A7 /* LJJBrowItem.m in Sources */,
 				BFC9C3B8187E8A6000982A87 /* LJJAppDelegate.m in Sources */,
+				BFBE4E2E1885394A00BF20A8 /* NSString+Html.m in Sources */,
 				BFC9C3D9187E8AAF00982A87 /* LJJViewController.m in Sources */,
 				BFAE2C3E188294E2000AE4A7 /* LJJEmotion.m in Sources */,
 				BFAE2C3D188294E2000AE4A7 /* LJJBrowView.m in Sources */,
