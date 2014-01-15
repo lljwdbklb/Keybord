@@ -39,14 +39,6 @@
 
 
 + (NSArray *)emotionsWithFile:(NSString *)file {
-//    NSMutableArray * arrayM = [NSMutableArray array];
-//    
-//    NSArray * array = [NSArray arrayWithContentsOfFile:file];
-//    [array enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-//        LJJEmotion * emotion = [[LJJEmotion alloc]initWithDict:obj];
-//        [arrayM addObject:emotion];
-//    }];
-    
     return [self emotionsWithFile:file clipCount:0];
 }
 
