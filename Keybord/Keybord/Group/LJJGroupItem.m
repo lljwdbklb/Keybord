@@ -17,6 +17,14 @@
     return self;
 }
 
+- (id)initWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon {
+    if (self = [self init]) {
+        [self setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+        [self setImage:[UIImage imageNamed:selectIcon] forState:UIControlStateSelected];
+    }
+    return self;
+}
+
 - (void)setHighlighted:(BOOL)highlighted { }
 
 @end

@@ -9,5 +9,15 @@
 #import "LJJGroup.h"
 
 @implementation LJJGroup
-
+- (id)initWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon emotions:(NSArray *)emotions {
+    if (self = [super init]) {
+        self.icon = icon;
+        self.selectIcon = selectIcon;
+        self.emotions = emotions;
+    }
+    return self;
+}
+- (id)initWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon {
+    return [self initWithIcon:icon selectIcon:selectIcon emotions:nil];
+}
 @end

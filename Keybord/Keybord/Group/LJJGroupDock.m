@@ -45,11 +45,12 @@ const CGFloat LJJGroupDockWidth = 30;
 }
 
 #pragma mark 添加一个GroupItem
-- (void)addGroupItemWithIcon:(NSString *)icon {
-    LJJGroupItem * item = [[LJJGroupItem alloc]init];
+- (void)addGroupItemWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon {
+    LJJGroupItem * item = [[LJJGroupItem alloc]initWithIcon:icon selectIcon:selectIcon];
     
     //设置
-    [item setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+//    [item setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+//    [item setImage:[UIImage imageNamed:selectIcon] forState:UIControlStateSelected];
     //设置颜色
     [item setBackgroundColor:[UIColor grayColor]];
     

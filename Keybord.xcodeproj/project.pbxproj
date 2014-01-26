@@ -4608,6 +4608,7 @@
 		BF76B6221894C26C0031D03D /* LJJTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LJJTextView.m; sourceTree = "<group>"; };
 		BF76B6241894C26C0031D03D /* NSString+Html.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Html.h"; sourceTree = "<group>"; };
 		BF76B6251894C26C0031D03D /* NSString+Html.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Html.m"; sourceTree = "<group>"; };
+		BF76B6311894C6090031D03D /* LJJKeybord.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LJJKeybord.h; sourceTree = "<group>"; };
 		BFC9C3A4187E8A6000982A87 /* Keybord.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keybord.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFC9C3A7187E8A6000982A87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BFC9C3A9187E8A6000982A87 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -6934,6 +6935,7 @@
 		BF76B60C1894C26C0031D03D /* Keybord */ = {
 			isa = PBXGroup;
 			children = (
+				BF76B6311894C6090031D03D /* LJJKeybord.h */,
 				BF76B60D1894C26C0031D03D /* Browbord */,
 				BF76B6141894C26C0031D03D /* Group */,
 				BF76B61B1894C26C0031D03D /* Images */,

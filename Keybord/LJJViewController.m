@@ -8,13 +8,7 @@
 
 #import "LJJViewController.h"
 
-#import "LJJBrowView.h"
-
-#import "LJJGroup.h"
-
-#import "LJJEmotion.h"
-
-#import "LJJTextView.h"
+#import "LJJKeybord.h"
 
 @interface LJJViewController () <UITextViewDelegate>
 {

@@ -32,6 +32,6 @@ extern const CGFloat LJJGroupDockWidth;
  *
  *  @param icon item图片
  */
-- (void)addGroupItemWithIcon:(NSString *)icon;
+- (void)addGroupItemWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon;
 
 @end
