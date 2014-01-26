@@ -1,13 +1,20 @@
 //
 //  LJJViewController.m
-//  Keybord
+//  KeybordGroup
 //
-//  Created by Jun on 14-1-9.
+//  Created by Jun on 14-1-15.
 //  Copyright (c) 2014年 Jun. All rights reserved.
 //
 
 #import "LJJViewController.h"
-#import "LJJKeybord.h"
+
+#import "LJJBrowView.h"
+
+#import "LJJGroup.h"
+
+#import "LJJEmotion.h"
+
+#import "LJJTextView.h"
 
 @interface LJJViewController () <UITextViewDelegate>
 {
@@ -30,7 +37,6 @@
     
     [self setupToolBar];//添加键盘工具
 }
-#pragma mark 添加textView
 - (void)setupTextView {
     LJJTextView * textView = [[LJJTextView alloc]initWithFrame:CGRectMake(0, 20, 320, 100)];
     //    [textView setEditable:NO];
@@ -41,19 +47,32 @@
     
 }
 
-#pragma mark 添加表情键盘
 - (void)setupBrowView {
     UITextField * textField = [[UITextField alloc]init];
     [self.view addSubview:textField];
     _textField = textField;
     
+    NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions.plist" ofType:nil]];
     
-    NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle] pathForResource:@"emotions.plist" ofType:nil]];
+    //第一组数据
+    LJJGroup * group = [[LJJGroup alloc]init];
+    group.icon = @"tabbar_home";
+    group.emotions = [array subarrayWithRange:NSMakeRange(0, 80)];
     
+    //第二组数据
+    LJJGroup * group2 = [[LJJGroup alloc]init];
+    group2.icon = @"tabbar_discover";
+    group2.emotions = [array subarrayWithRange:NSMakeRange(80, 120)];
+    
+    //第三组数据
+    LJJGroup * group3 = [[LJJGroup alloc]init];
+    group3.icon = @"tabbar_more";
+    group3.emotions = [array subarrayWithRange:NSMakeRange(200, 100)];
+    
+    //表情键盘
     LJJBrowView * brow = [[LJJBrowView alloc]init];
+    [brow setGroups:@[group,group2,group3]];
     [brow setTextView:_textView];
-    [brow setEmotions:array];
-    //    [self.view addSubview:brow];
     [_textField setInputView:brow];
 }
 #pragma mark 添加键盘工具
@@ -64,7 +83,6 @@
     [_textView setInputAccessoryView:bar];
     [_textField setInputAccessoryView:bar];
 }
-
 #pragma mark 点击事件
 - (void)huan {
     if (_textField.isFirstResponder) {
@@ -75,5 +93,4 @@
         [_textField becomeFirstResponder];
     }
 }
-
 @end

@@ -1,5 +1,5 @@
 //
-//  LJJViewController.h
+//  LJJGroupItem.h
 //  KeybordGroup
 //
 //  Created by Jun on 14-1-15.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface LJJViewController : UIViewController
+@interface LJJGroupItem : UIButton
 
 @end

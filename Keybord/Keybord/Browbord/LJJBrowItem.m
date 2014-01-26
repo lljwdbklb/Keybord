@@ -1,9 +1,11 @@
 //
 //  LJJBrowItem.m
-//  Keybord
+//  KeybordGroup
 //
-//  Created by Jun on 14-1-9.
+//  Created by Jun on 14-1-15.
 //  Copyright (c) 2014年 Jun. All rights reserved.
+//
+// 键盘模块
 //
 
 #import "LJJBrowItem.h"
@@ -13,15 +15,13 @@
 #import "NSString+Html.h"
 
 const CGFloat LJJBrowItemHeight = 200;
-const NSInteger LJJBrowCount = 27;
 
-NSString * const LJJDeleteImageName = @"DeleteEmoticonBtn";
-NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
-#define kAnimatedTimer  0.25
-#define kRows           4
-#define kColumns        7
+const NSInteger LJJRows = 3;
+const NSInteger LJJColumns = 6;
+const NSInteger LJJBrowCount = 17;
 
-#define kPointStart     CGPointMake(10, 10)
+NSString * const LJJDeleteImageName = @"DeleteEmoticonBtn.png";
+NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
 
 @interface LJJBrowItem()
 {
@@ -36,22 +36,28 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setupBtns];
+        [self setupItems];
     }
     return self;
 }
 
-- (void)setEmotions:(NSArray *)emotions {
-    _emotions = emotions;
-    [self setItems];
-}
-
 - (void)setItems {
     for (UIButton * btn in _items) {
+        
+        NSInteger row = btn.tag / LJJColumns;
+        NSInteger coulmn = btn.tag % LJJColumns;
+        
+        CGFloat w = self.frame.size.width / LJJColumns;
+        CGFloat h = self.frame.size.height / LJJRows;
+        CGFloat x = coulmn * w;
+        CGFloat y = row * h;
+        CGRect frame = CGRectMake(x, y, w, h);
+        [btn setFrame:frame];
+        
         if (btn.tag == LJJBrowCount) {
             [btn setImage:[UIImage imageNamed:LJJDeleteImageName] forState:UIControlStateNormal];
             [btn setImage:[UIImage imageNamed:LJJDeleteImageNameHL] forState:UIControlStateHighlighted];
-        } else {
+        } else if(self.emotions.count > btn.tag) {
             LJJEmotion * emotion = self.emotions[btn.tag];
             NSAssert(emotion.icon != nil, @"模型地址为空");
             NSAssert(emotion.phrase != nil, @"模型解析参数为空");
@@ -63,24 +69,19 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
                 image = [UIImage imageNamed:emotion.icon];
             }
             [btn setImage:image forState:UIControlStateNormal];
+            [btn setHidden:NO];
+        } else {
+            [btn setHidden:YES];
         }
     }
 }
 
-- (void)setupBtns {
-    int count = kRows * kColumns;
+- (void)setupItems {
+    int count = LJJRows * LJJColumns;
     NSMutableArray * arrayM = [NSMutableArray arrayWithCapacity:28];
     for (int i = 0; i < count; i++) {
-        NSInteger row = i % kRows;
-        NSInteger coulmn = i % kColumns;
         
-        CGFloat w = (self.frame.size.width - kPointStart.x * 2) / kColumns;
-        CGFloat h = (self.frame.size.height - kPointStart.y * 2) / kRows;
-        CGFloat x = kPointStart.x + coulmn * w;
-        CGFloat y = kPointStart.y + row * h;
-        CGRect frame = CGRectMake(x, y, w, h);
-        
-        UIButton * btn = [[UIButton alloc]initWithFrame:frame];
+        UIButton * btn = [[UIButton alloc]init];
         [btn addTarget:self action:@selector(clickBrow:) forControlEvents:UIControlEventTouchUpInside];
         btn.tag = i;
         
@@ -90,23 +91,31 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
     _items = arrayM;
 }
 
+#pragma mark - 重写私有方法
 - (void)setFrame:(CGRect)frame {
-    frame.size.width = [UIScreen mainScreen].applicationFrame.size.width;
     frame.size.height = LJJBrowItemHeight;
     [super setFrame:frame];
 }
 
 - (void)setBounds:(CGRect)bounds {
-    bounds.size.width = [UIScreen mainScreen].applicationFrame.size.width;
     bounds.size.height = LJJBrowItemHeight;
     [super setBounds:bounds];
 }
-//NSParagraphStyle
-#pragma mark 点击事件
+
+- (void)setEmotions:(NSArray *)emotions {
+    _emotions = emotions;
+    
+    if (emotions == nil) {
+        self.hidden = YES;
+    } else {
+        self.hidden = NO;
+        [self setItems];
+    }
+}
+
+#pragma mark － 点击事件
 - (void)clickBrow:(UIButton *)btn {
-//    if (_textField == nil || _textView == nil) return;
-//    NSLog(@"%d",btn.tag);
-    if (btn.tag != LJJBrowCount && btn.tag > _emotions.count) return;
+    if (btn.hidden || (_textField == nil && _textView == nil)) return;
     NSMutableString * str = nil;
     
     if (_textField) {
@@ -118,17 +127,17 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
     if (btn.tag != 27) {
         LJJEmotion * emotion = self.emotions[btn.tag];
         [str appendFormat:@"%@",emotion.phrase];
-    } else {
+    } else {//删除事件
         if (str.length) {
             NSRange range = NSMakeRange(str.length, 0);
             if (range.length == 0 && range.location != 0) {
                 NSString * sub = [str substringWithRange:NSMakeRange(range.location - 1, 1)];
-                if ([sub isEqualToString:@"]"]) {
+                if ([sub isEqualToString:@"]"]) {//是图片
                     NSRange lastRange = [str rangeOfString:@"[" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
                     
                     range = NSMakeRange(lastRange.location, range.location - lastRange.location);
                     [str deleteCharactersInRange:range];
-                }else {
+                } else {//是字符
                     [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
                 }
             }
@@ -143,53 +152,4 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL";
     
 }
 
-/*
- if (_textView) {
- NSMutableString * str = [NSMutableString stringWithString:[_textView text]];
- if (btn.tag != LJJBrowCount) {
- LJJEmotion * emotion = self.emotions[btn.tag];
- [str appendFormat:@"%@",emotion.phrase];
- } else {
- if (str.length) {
- 
- NSRange range = NSMakeRange(str.length, 0);
- if (range.length == 0 && range.location != 0) {
- NSString * sub = [str substringWithRange:NSMakeRange(range.location - 1, 1)];
- if ([sub isEqualToString:@"]"]) {
- NSRange lastRange = [str rangeOfString:@"[" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
- 
- range = NSMakeRange(lastRange.location, range.location - lastRange.location);
- [str deleteCharactersInRange:range];
- }else {
- [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
- }
- }
- 
- }
- }
- [_textView setText:str];
- } else {
- NSMutableString * str = [NSMutableString stringWithString:[_textField text]];
- if (btn.tag != 27) {
- LJJEmotion * emotion = self.emotions[btn.tag];
- [str appendFormat:@"%@",emotion.phrase];
- } else {
- if (str.length) {
- NSRange range = NSMakeRange(str.length, 0);
- if (range.length == 0 && range.location != 0) {
- NSString * sub = [str substringWithRange:NSMakeRange(range.location - 1, 1)];
- if ([sub isEqualToString:@"]"]) {
- NSRange lastRange = [str rangeOfString:@"[" options:NSBackwardsSearch range:NSMakeRange(0, range.location)];
- 
- range = NSMakeRange(lastRange.location, range.location - lastRange.location);
- [str deleteCharactersInRange:range];
- }else {
- [str deleteCharactersInRange:NSMakeRange(str.length - 1, 1)];
- }
- }
- }
- }
- [_textField setText:str];
- }
- */
 @end
