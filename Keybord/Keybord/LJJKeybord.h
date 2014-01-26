@@ -13,15 +13,17 @@
  *  NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle] pathForResource:@"emotions.plist" ofType:nil]];
  *
  *
- *  LJJBrowView * brow = [[LJJBrowView alloc]init];
- *  //添加表情键盘输入时，输入到textView中
- *  [brow setTextView:_textView];
- *  //[brow setTextField:_textField];//两者不能同时设置
- *  //添加表情数据
- *  [brow setEmotions:array];
- *  
- *  //以textField打开键盘
- *  [_textField setInputView:brow];
+ *
+ * LJJGroup * group = [[LJJGroup alloc]init];
+ * group.icon = @"tabbar_more";
+ * group.emotions = [array subarrayWithRange:NSMakeRange(0, 100)];
+ * ...
+ *
+ * //表情键盘
+ * LJJBrowView * brow = [[LJJBrowView alloc]init];
+ * [brow setGroups:@[group,...]];
+ * [brow setTextView:_textView];
+ * [_textField setInputView:brow];
  *
  */
 
