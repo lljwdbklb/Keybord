@@ -9,6 +9,7 @@
 #import "LJJGroupDock.h"
 
 #import "LJJGroupItem.h"
+#import "LJJGroup.h"
 
 const CGFloat LJJGroupDockWidth = 30;
 
@@ -46,11 +47,46 @@ const CGFloat LJJGroupDockWidth = 30;
 
 #pragma mark 添加一个GroupItem
 - (void)addGroupItemWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon {
-    LJJGroupItem * item = [[LJJGroupItem alloc]initWithIcon:icon selectIcon:selectIcon];
+//    LJJGroupItem * item = [[LJJGroupItem alloc]initWithIcon:icon selectIcon:selectIcon];
+//    
+//    //设置
+////    [item setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
+////    [item setImage:[UIImage imageNamed:selectIcon] forState:UIControlStateSelected];
+//    //设置颜色
+//    [item setBackgroundColor:[UIColor grayColor]];
+//    
+//    NSInteger count = self.subviews.count;
+//    [item addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchDown];
+//    [item setTag:count];
+//    [self addSubview:item];
+//    [_items addObject:item];
+//    
+//    if (count == 0) { //默认第一个按钮进行点击
+//        [self clickItem:item];
+//    }
+//    
+//    for (LJJGroupItem * view in _items) {
+//        //设置尺寸
+//        CGFloat w = self.frame.size.width;
+//        CGFloat h = self.frame.size.height / self.subviews.count;
+//        CGFloat x = 0;
+//        CGFloat y = view.tag * h;
+//        [view setFrame:CGRectMake(x, y, w, h)];
+//    }
+//    [self setNeedsDisplay];
+    LJJGroup * group = [[LJJGroup alloc]initWithIcon:icon selectIcon:selectIcon];
     
-    //设置
-//    [item setImage:[UIImage imageNamed:icon] forState:UIControlStateNormal];
-//    [item setImage:[UIImage imageNamed:selectIcon] forState:UIControlStateSelected];
+    [self addGroupItemWithGroup:group];
+}
+
+- (void)addGroupItemWithTitle:(NSString *)title {
+    LJJGroup * group = [[LJJGroup alloc]initWithTitle:title];
+    
+    [self addGroupItemWithGroup:group];
+}
+
+- (void)addGroupItemWithGroup:(LJJGroup *)group {
+    LJJGroupItem * item = [[LJJGroupItem alloc]initWithGroup:group];
     //设置颜色
     [item setBackgroundColor:[UIColor grayColor]];
     

@@ -120,7 +120,7 @@ const CGFloat LJJBrowViewHeight = 220;
     
     [groups enumerateObjectsUsingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
         LJJGroup * group = obj;
-        [_dock addGroupItemWithIcon:group.icon selectIcon:group.selectIcon];
+        [_dock addGroupItemWithGroup:group];
     }];
 }
 

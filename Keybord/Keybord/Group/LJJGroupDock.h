@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @class LJJGroupDock;
+@class LJJGroup;
 
 @protocol LJJGroupDockDelegate <NSObject>
 @optional
@@ -33,5 +34,13 @@ extern const CGFloat LJJGroupDockWidth;
  *  @param icon item图片
  */
 - (void)addGroupItemWithIcon:(NSString *)icon selectIcon:(NSString *)selectIcon;
+/**
+ *  添加一个GroupItem
+ *
+ *  @param title item文本
+ */
+- (void)addGroupItemWithTitle:(NSString *)title;
+
+- (void)addGroupItemWithGroup:(LJJGroup *)group;
 
 @end
