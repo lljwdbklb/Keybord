@@ -35,7 +35,7 @@
 
             duration += [self frameDurationAtIndex:i source:source];
 
-            [images addObject:[UIImage imageWithCGImage:image scale:[UIScreen mainScreen].scale orientation:UIImageOrientationUp]];
+            [images addObject:[UIImage imageWithCGImage:image scale:1.0 orientation:UIImageOrientationUp]];
 
             CGImageRelease(image);
         }
