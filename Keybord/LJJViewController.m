@@ -46,25 +46,27 @@
     [self.view addSubview:textField];
     _textField = textField;
     
-    NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions.plist" ofType:nil]];
+    NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions1.plist" ofType:nil]];
+    NSArray * array2 = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions2.plist" ofType:nil]];
+    NSArray * array3 = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions3.plist" ofType:nil]];
     
     //第一组数据
     LJJGroup * group = [[LJJGroup alloc]init];
 //    group.icon = @"tabbar_home";
     group.title = @"哈哈哈";
-    group.emotions = [array subarrayWithRange:NSMakeRange(0, 80)];
+    group.emotions = array;
     
     //第二组数据
     LJJGroup * group2 = [[LJJGroup alloc]init];
 //    group2.icon = @"tabbar_discover";
     group2.title = @"嘻嘻嘻";
-    group2.emotions = [array subarrayWithRange:NSMakeRange(80, 120)];
+    group2.emotions = array2;
     
     //第三组数据
     LJJGroup * group3 = [[LJJGroup alloc]init];
 //    group3.icon = @"tabbar_more";
     group3.title = @"呵呵呵";
-    group3.emotions = [array subarrayWithRange:NSMakeRange(200, 100)];
+    group3.emotions = array3;
     
     //表情键盘
     LJJBrowView * brow = [[LJJBrowView alloc]init];

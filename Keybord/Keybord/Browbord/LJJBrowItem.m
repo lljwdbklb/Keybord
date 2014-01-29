@@ -14,11 +14,13 @@
 
 #import "NSString+Html.h"
 
+#import "LJJBrowButton.h"
+
 const CGFloat LJJBrowItemHeight = 200;
 
 const NSInteger LJJRows = 3;
-const NSInteger LJJColumns = 6;
-const NSInteger LJJBrowCount = 17;
+const NSInteger LJJColumns = 3;
+const NSInteger LJJBrowCount = 8;
 
 NSString * const LJJDeleteImageName = @"DeleteEmoticonBtn.png";
 NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
@@ -36,39 +38,41 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
 {
     self = [super initWithFrame:frame];
     if (self) {
+        //设置默认按钮
         [self setupItems];
     }
     return self;
 }
 
 - (void)setItems {
-    for (UIButton * btn in _items) {
+    for (LJJBrowButton * btn in _items) {
         
         NSInteger row = btn.tag / LJJColumns;
         NSInteger coulmn = btn.tag % LJJColumns;
         
-        CGFloat w = self.frame.size.width / LJJColumns;
-        CGFloat h = self.frame.size.height / LJJRows;
-        CGFloat x = coulmn * w;
-        CGFloat y = row * h;
+        CGFloat w = self.frame.size.width / LJJColumns -2;
+        CGFloat h = self.frame.size.height / LJJRows - 2;
+        CGFloat x = coulmn * w + coulmn * 2;
+        CGFloat y = row * h + row * 2;
         CGRect frame = CGRectMake(x, y, w, h);
         [btn setFrame:frame];
+        
         
         if (btn.tag == LJJBrowCount) {
             [btn setImage:[UIImage imageNamed:LJJDeleteImageName] forState:UIControlStateNormal];
             [btn setImage:[UIImage imageNamed:LJJDeleteImageNameHL] forState:UIControlStateHighlighted];
         } else if(self.emotions.count > btn.tag) {
             LJJEmotion * emotion = self.emotions[btn.tag];
+            
             NSAssert(emotion.icon != nil, @"模型地址为空");
             NSAssert(emotion.phrase != nil, @"模型解析参数为空");
-            UIImage * image = nil;
+            
+            
             if ([emotion.icon isHttpPath]) {
-                NSData * data = [NSData dataWithContentsOfURL:[NSURL URLWithString:emotion.icon]];
-                image = [UIImage imageWithData:data];
+                [btn setImageUrl:emotion.icon forState:UIControlStateNormal];
             } else {
-                image = [UIImage imageNamed:emotion.icon];
+                [btn setImageName:emotion.icon forState:UIControlStateNormal];
             }
-            [btn setImage:image forState:UIControlStateNormal];
             [btn setHidden:NO];
         } else {
             [btn setHidden:YES];
@@ -81,7 +85,9 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
     NSMutableArray * arrayM = [NSMutableArray arrayWithCapacity:28];
     for (int i = 0; i < count; i++) {
         
-        UIButton * btn = [[UIButton alloc]init];
+        LJJBrowButton * btn = [[LJJBrowButton alloc]init];
+        
+        
         [btn addTarget:self action:@selector(clickBrow:) forControlEvents:UIControlEventTouchUpInside];
         btn.tag = i;
         
@@ -114,7 +120,7 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
 }
 
 #pragma mark － 点击事件
-- (void)clickBrow:(UIButton *)btn {
+- (void)clickBrow:(LJJBrowButton *)btn {
     if (btn.hidden || (_textField == nil && _textView == nil)) return;
     NSMutableString * str = nil;
     

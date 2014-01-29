@@ -42,7 +42,7 @@ const CGFloat LJJBrowViewHeight = 220;
         //设置UI
         [self setupGroupDock];
         [self setupScrollView];
-        [self setupPageControl];
+//        [self setupPageControl];
         //设置缓存
         [self setupCache];
     }
@@ -231,7 +231,10 @@ const CGFloat LJJBrowViewHeight = 220;
                 [_reusableItemSetM addObject:item];
                 [_screenItemDictM removeObjectForKey:obj];
             } else {
-                [item setEmotions:[self pageDataWithCurrentIndex:idx]];
+                NSArray * currentEmotions = [self pageDataWithCurrentIndex:idx];
+                if (![item.emotions[0] isEqual:currentEmotions[0]]) {
+                    [item setEmotions:[self pageDataWithCurrentIndex:idx]];
+                }
             }
         }
     }];
