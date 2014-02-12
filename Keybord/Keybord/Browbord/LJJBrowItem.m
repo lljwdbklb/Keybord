@@ -22,6 +22,8 @@ const NSInteger LJJRows = 4;
 const NSInteger LJJColumns = 5;
 const NSInteger LJJBrowCount = 19;
 
+const NSInteger LJJItemMargin = 2;
+
 NSString * const LJJDeleteImageName = @"DeleteEmoticonBtn.png";
 NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
 
@@ -50,10 +52,10 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
         NSInteger row = btn.tag / LJJColumns;
         NSInteger coulmn = btn.tag % LJJColumns;
         
-        CGFloat w = self.frame.size.width / LJJColumns -2;
-        CGFloat h = self.frame.size.height / LJJRows - 2;
-        CGFloat x = coulmn * w + coulmn * 2;
-        CGFloat y = row * h + row * 2;
+        CGFloat w = self.frame.size.width / LJJColumns -LJJItemMargin*2;
+        CGFloat h = self.frame.size.height / LJJRows - LJJItemMargin*2;
+        CGFloat x = coulmn * w + (coulmn+1) * LJJItemMargin;
+        CGFloat y = row * h + (row+1) * LJJItemMargin;
         CGRect frame = CGRectMake(x, y, w, h);
         [btn setFrame:frame];
         
@@ -130,7 +132,7 @@ NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
         str = [NSMutableString stringWithString:_textView.text];
     }
     
-    if (btn.tag != 27) {
+    if (btn.tag != LJJBrowCount) {
         LJJEmotion * emotion = self.emotions[btn.tag];
         [str appendFormat:@"%@",emotion.phrase];
     } else {//删除事件
