@@ -218,22 +218,24 @@ const CGFloat LJJBrowViewHeight = 220;
                     [item setTextField:_textField];
                     [item setTextView:_textView];
                     [_items addObject:item];
+                    [_scrollView addSubview:item];
                 }
                 [item setFrame:frame];
                 [item setEmotions:[self pageDataWithCurrentIndex:idx]];
                 
-                [_scrollView addSubview:item];
+                [item setHidden:NO];
                 [_screenItemDictM setObject:item forKey:obj];
             }
         } else {//有这个视图
             if (![self isExistScreenWithFrame:frame]) {//不在屏幕中
-                [item removeFromSuperview];
+//                [item removeFromSuperview];
+                [item setHidden:YES];
                 [_reusableItemSetM addObject:item];
                 [_screenItemDictM removeObjectForKey:obj];
             } else {
                 NSArray * currentEmotions = [self pageDataWithCurrentIndex:idx];
-                if (![item.emotions[0] isEqual:currentEmotions[0]]) {
-                    [item setEmotions:[self pageDataWithCurrentIndex:idx]];
+                if (![[item.emotions[0] icon] isEqual:[currentEmotions[0] icon]]) {
+                    [item setEmotions:currentEmotions];
                 }
             }
         }

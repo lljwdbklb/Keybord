@@ -18,11 +18,11 @@
 
 const CGFloat LJJBrowItemHeight = 200;
 
-const NSInteger LJJRows = 4;
-const NSInteger LJJColumns = 5;
-const NSInteger LJJBrowCount = 19;
+const NSInteger LJJRows = 3;
+const NSInteger LJJColumns = 4;
+const NSInteger LJJBrowCount = 11;
 
-const NSInteger LJJItemMargin = 2;
+const NSInteger LJJItemMargin = 5;
 
 NSString * const LJJDeleteImageName = @"DeleteEmoticonBtn.png";
 NSString * const LJJDeleteImageNameHL = @"DeleteEmoticonBtnHL.png";
