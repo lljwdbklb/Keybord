@@ -47,7 +47,7 @@
     _textField = textField;
     
     NSArray * array = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions1.plist" ofType:nil]];
-    NSArray * array2 = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions2.plist" ofType:nil]];
+//    NSArray * array2 = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions2.plist" ofType:nil]];
     NSArray * array3 = [LJJEmotion emotionsWithFile:[[NSBundle mainBundle]pathForResource:@"emotions3.plist" ofType:nil]];
     
     //第一组数据
@@ -57,11 +57,11 @@
     group.emotions = array;
     
     //第二组数据
-    LJJGroup * group2 = [[LJJGroup alloc]init];
-//    group2.icon = @"tabbar_discover";
-    group2.title = @"嘻嘻嘻";
-    group2.emotions = array2;
-    
+//    LJJGroup * group2 = [[LJJGroup alloc]init];
+////    group2.icon = @"tabbar_discover";
+//    group2.title = @"嘻嘻嘻";
+//    group2.emotions = array2;
+//    
     //第三组数据
     LJJGroup * group3 = [[LJJGroup alloc]init];
 //    group3.icon = @"tabbar_more";
@@ -70,7 +70,7 @@
     
     //表情键盘
     LJJBrowView * brow = [[LJJBrowView alloc]init];
-    [brow setGroups:@[group,group2,group3]];
+    [brow setGroups:@[group,group3]];
     [brow setTextView:_textView];
     [_textField setInputView:brow];
 }
